@@ -1,14 +1,14 @@
 defmodule Faker.Mixfile do
   use Mix.Project
 
-  @source_url "https://github.com/elixirs/faker"
-  @version "0.19.0-alpha.1"
+  @source_url "https://github.com/matt-savvy/faker"
+  @version "0.19.0"
 
   def project do
     [
       app: :faker,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.19",
       description: "Faker is a pure Elixir library for generating fake data.",
       package: package(),
       name: "Faker",
@@ -28,7 +28,6 @@ defmodule Faker.Mixfile do
 
   def application do
     [
-      # mod: {Faker.Application, []},
       extra_applications: [:crypto, :makeup],
       env: env()
     ]
