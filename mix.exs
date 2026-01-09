@@ -16,9 +16,7 @@ defmodule Faker.Mixfile do
       docs: docs(),
       source_url: @source_url,
       homepage_url: @source_url,
-      preferred_cli_env: [
-        "test.watch": :test
-      ],
+      cli: cli(),
       dialyzer: [
         flags: [
           :error_handling,
@@ -55,6 +53,10 @@ defmodule Faker.Mixfile do
       {:makeup_elixir, "== 1.0.1"},
       {:mix_test_watch, "== 1.2.0", only: [:dev, :test], runtime: false}
     ]
+  end
+
+  def cli do
+    [preferred_envs: ["test.watch": :test]]
   end
 
   defp docs do
